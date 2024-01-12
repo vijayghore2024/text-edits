@@ -27,7 +27,6 @@ const TextEdits = () => {
         text.current.value = str2;
     }
 
-    // Incomplete
     const setFontSize = () => {
         let fontSizeInp = fs.current.value;
         let textArea = text.current;
@@ -39,6 +38,10 @@ const TextEdits = () => {
         text.current.style.color = userColor;
     }
 
+    const copyToClipboard = () => {
+        let textAreaText = text.current.value;
+        navigator.clipboard.writeText(textAreaText);
+    }
 
     return (
         <div>
@@ -65,8 +68,10 @@ const TextEdits = () => {
 
                    </select>
                    
-                    <label htmlFor='ucolor' className="btn btn-dark btn-lg ms-2">Font Color</label>
+                    <label htmlFor='ucolor' className="btn btn-dark btn-lg ms-2 rounded-0">Font Color</label>
                     <input className='btn btn-dark btn-lg' type="color" name="ucolor" id="ucolor" ref={color}  onChange={setColor}/>
+
+                    <button className="mx-2 btn btn-dark btn-lg" onClick={copyToClipboard}>Copy to Clipboard</button>
                 </div>
 
             </div>
