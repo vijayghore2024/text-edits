@@ -48,7 +48,7 @@ const TextEdits = () => {
             <h1 className="text-center my-5">Text Edits</h1>
 
             <div className="container">
-                <textarea className='form-control mb-4' name="text" id="text" cols="100" rows="10" ref={text}></textarea>
+                <textarea className='form-control border border-dark mb-4' name="text" id="text" cols="100" rows="10" ref={text} placeholder='Type your text here...'></textarea>
 
 
                 <div className='text-center'>
